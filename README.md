@@ -1,1 +1,1 @@
-# risq-avax-staking
+# Risq Staking Subgraph for AXAV

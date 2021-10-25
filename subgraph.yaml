@@ -1,0 +1,89 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: RisqAVAXStaking
+    network: avalanche
+    source:
+      address: "0xD9B4806A672A8Da6666c9d9d4B3B30eF6311611d"
+      abi: RisqStaking
+      startBlock: 6095052
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: RisqStaking
+          file: ./abis/RisqStaking.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
+
+  - kind: ethereum/contract
+    name: RisqLINKStaking
+    network: avalanche
+    source:
+      address: "0x32E1e4502AE8aB3d9AFdC71bf34419Ea2d7eA37F"
+      abi: RisqStaking
+      startBlock: 6095052
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: RisqStaking
+          file: ./abis/RisqStaking.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
+
+  - kind: ethereum/contract
+    name: RisqWBTCStaking
+    network: avalanche
+    source:
+      address: "0xe562eF7f719F97f915a9F53F8C54dA6155CA4797"
+      abi: RisqStaking
+      startBlock: 6095052
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: RisqStaking
+          file: ./abis/RisqStaking.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
+
+  - kind: ethereum/contract
+    name: RisqETHStaking
+    network: avalanche
+    source:
+      address: "0xe70aA6fB68D134333C95E3739B62dE42Ee43743e"
+      abi: RisqStaking
+      startBlock: 6095052
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: RisqStaking
+          file: ./abis/RisqStaking.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
+
+ 

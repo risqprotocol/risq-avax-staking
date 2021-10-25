@@ -1,0 +1,8 @@
+type TransferType @entity {
+  id: ID!
+  contract:Bytes! 
+  account: Bytes! # address
+  amount: BigInt! # address
+  blockNumber: BigInt!
+  timestamp: BigInt!
+}
